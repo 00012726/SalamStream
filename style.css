@@ -1,0 +1,358 @@
+/*  
+    colors used: 
+    7E7E7E -> buttons:grey
+    1c1c1c -> box shadow(nav, sidebar):black
+    3b3b3b -> whole background color:lightblack
+    ffffff -> text color for eye catch:white
+    cccccc -> inactive text:grey 
+    b3b2b2 -> placeholder text:lightgrey
+    4DAF00 -> active text and buttons:green
+    969696 -> sidebar line:grey
+ */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+    background-color: #3b3b3b;
+    color: #ccc;
+}
+a{
+    text-decoration: none;
+    color: #3b3b3b;
+}
+
+
+
+/* images */
+img{
+    cursor: pointer;   
+}
+
+.flex-div{
+    display: flex;
+    align-items: center;
+}
+
+
+/* navigation bar */
+nav{
+    padding: 10px 2%;
+    justify-content: space-between;
+    box-shadow: 0 0 5px #1c1c1c;
+    background-color: #3b3b3b;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 70px;
+}
+
+.nav-right{
+    height: 30px;
+}
+
+.nav-right img{
+    width: 20px;
+    margin: 20px;
+}
+
+.nav-right .userIcon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 0;
+}
+
+.nav-left .menuIcon{
+    width: 20px;
+    margin-right: 30px;
+}
+
+.nav-left .logoIconT{
+    width: 150px;
+    padding-top: 5px;
+}
+
+.nav-mid .searchBox{
+    border: 1px solid #cccccc;
+    margin-right: 15px;
+    padding: 8px 12px;
+    border-radius: 25px;
+}
+
+.nav-mid .searchBox input{
+    width: 400px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+.nav-mid .searchBox img{
+    width: 15px;
+
+}
+
+/* input */
+input::placeholder{
+    color: #b3b2b2; 
+}
+  
+input{
+    color: #fff; 
+}
+  
+
+/* sidebar */
+.sidebar{
+    background: #3b3b3b;
+    width: 17%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    padding-left: 2%;
+    padding-top: 90px;
+    box-shadow: 0 0 2px #1c1c1c;
+}
+
+.shortcutLinks a img{
+    width: 20px;
+    margin-right: 20px;
+}
+
+.shortcutLinks a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wraps;
+}
+
+.shortcutLinks a:first-child{
+    padding-top: 4px;
+}
+
+.shortcutLinks a:first-child p{
+    color: #4DAF00;
+    padding-top: 4px;
+}
+
+.sidebar hr{
+    border: 0;
+    height: 1px;
+    background-color: #969696;
+    width: 85%;
+}
+
+.subList h3{
+    font-size: 13px;
+    margin: 20px 0;
+    color: #cccccc;
+}
+.subList a{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: fit-content;
+    flex-wrap: wrap;
+}
+.subList a img{
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.smallSidebar{
+    width: 5%;
+}
+
+.smallSidebar a p{
+    display: none;
+}
+
+.smallSidebar h3{
+    display: none;
+}
+
+.smallSidebar hr{
+    width: 50%;
+    margin-bottom: 25px;
+}
+.smallSidebar .subList a img{
+    margin-right: 10px;
+}
+
+
+/* ---container--- */
+.container {
+    background-color: #3b3b3b;
+    padding-left: 18%;
+    padding-right: 2%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.largeContainer{
+    padding-left: 7%;
+}
+
+.listContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+}
+
+
+/* ---video information in feed--- */
+.vidList
+{
+    margin-left: 2%;
+}
+
+.vidList .thumbnail{
+    width: 100%;
+    border-radius: 5px;
+}
+
+.vidList .flex-div{
+    align-items: flex-start;
+    margin-top: 7px;
+}
+
+.vidInfo a p{
+    color: white;
+}
+
+.listContainer .vidList .flex-div img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 2%;
+}
+
+.vidInfo{
+    color: #5a5a5a;
+    font-size: 13px;
+}
+
+.vidInfo a{
+    color: #fff;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+
+/* ---------play video page--------- */
+.playContainer{
+    padding-left: 2%;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.playVideo{
+    flex-basis: 69%;
+    padding-left: 3%;
+    padding-right: 2%;
+}
+.rightSidebar{
+    flex-basis: 30%;
+}
+.playVideo video{
+    width: 900px;
+    height: 500px;
+}
+
+.playVidInfo a p{
+    font-weight: 1000;
+}
+
+
+/* ----right sidebar in play video page---- */
+.sideVidList{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.sideVidList img{
+    width: 100%;
+}
+
+.sideVidList .smallThumb{
+    flex-basis: 49%;
+}
+
+.sideVidList .playVidInfo{
+    flex-basis: 47%;
+    padding-top: 1%;
+}
+
+.playVideo p{
+    color: #b3b2b2;
+}
+
+/* ----video tags----- */
+
+.tags a p{
+    display: inline;
+    color: #4DAF00;
+    font-size: 13px;
+}
+
+.playVideo h3{
+    font-weight: 600;
+    font-size: 22px;
+}
+
+
+
+
+
+
+
+
+/* -----media----- */
+@media (max-width: 900px) {
+    .menuIcon{
+        display: none;
+    }
+    .sidebar{
+        display: none;
+    }
+
+    .container{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .container .largeContainer{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .nav-right img{
+        display: none;
+    }
+    .nav-right .userIcon{
+        display: block;
+        width: 30px;
+        margin-left: 0px;
+    }
+    .nav-mid .searchBox input{
+        width: 100px;
+        margin-left: 10px;
+    }
+    .flex-div .nav-left .logoIconT{
+        width: 100px;
+        height: 50px;
+    }
+
+}
