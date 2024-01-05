@@ -524,3 +524,10 @@ input{
         margin-top: 15px;
     }
 }
+
+
+
+/* ----------admin page style---------------- */
+.notForUserPage{
+    color: #b3b2b2;
+}
