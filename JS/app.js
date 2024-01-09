@@ -29,29 +29,85 @@ function hidePopup()
 
 
 // <------------INPUT TYPE FOR UPLOADING FILES----------------->
-function showFileInput(type) {
-    var fileInput = document.createElement("input");
-    fileInput.type = "file";
+var alertTriggered = false; // whether alert has been triggered
 
-    if (type === "video") 
+function showFileInput(type) 
+{
+  var fileInput = document.createElement("input");
+  fileInput.type = "file";
+
+  if (type === "video") 
+  {
+    fileInput.accept = "video/*";
+  } 
+  else if (type === "audio") 
+  {
+    fileInput.accept = "audio/*";
+  } 
+  else if (type === "book") 
+  {
+    fileInput.accept = ".pdf";
+  }
+
+  fileInput.addEventListener("change", function () 
+  {
+    if (!validateFileType(fileInput, type)) 
     {
-      fileInput.accept = "video/*";
-    } 
-    else if (type === "audio") 
-    {
-      fileInput.accept = "audio/*";
-    } 
-    else if (type === "book") 
-    {
-      fileInput.accept = ".pdf";
+      if (!alertTriggered) 
+      {
+        alert("Please choose an appropriate file type.");
+        alertTriggered = true; // Set the flag to true after the first alert
+        setTimeout(function () 
+        {
+          alertTriggered = false; // Reset the flag after a short delay
+        }, 50);
+      }
+      return;
     }
 
-    fileInput.addEventListener("change", function() 
-    {
-      // Handle file upload logic here
-      alert("File uploaded successfully!");
-      hidePopup();
-    });
+    // Handle file upload logic here
+    alert("File uploaded successfully!");
+    hidePopup();
+  });
 
-    fileInput.click();
+  fileInput.click();
 }
+
+function validateFileType(fileInput, type) 
+{
+  var allowedExtensions = [];
+
+  if (type === "video") 
+  {
+    allowedExtensions = ["mp4", "mov", "avi"];
+  } 
+  else if (type === "audio") 
+  {
+    allowedExtensions = ["mp3", "wav", "ogg"];
+  } 
+  else if (type === "book") 
+  {
+    allowedExtensions = ["pdf"];
+  }
+
+  var fileName = fileInput.value.split('.').pop().toLowerCase();
+  if (!allowedExtensions.includes(fileName)) 
+  {
+    if (!alertTriggered) {
+      alert("Please choose an appropriate file type.");
+      alertTriggered = true; // Set the flag to true after the first alert
+      setTimeout(function () 
+      {
+        alertTriggered = false; // Reset the flag after a short delay
+      }, 50);
+    }
+    return false;
+  }
+
+  return true;
+}
+
+
+
+
+

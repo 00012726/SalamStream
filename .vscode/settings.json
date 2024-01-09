@@ -1,0 +1,12 @@
+{
+    "[javascript]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": false,
+        "editor.formatOnType": false
+    },
+    "window.zoomLevel": 1,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false,
+    "editor.tabSize": 4
+}

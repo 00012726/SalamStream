@@ -541,11 +541,19 @@ input{
     background-color: #4DAF00;
     color: #fff;
     border: none;
-    padding: 10px;
+    padding: 0px 10px; 
     cursor: pointer;
     border-radius: 20px;
-    font-weight: 600;
+    font-weight: 780;
+    font-size: 15px;
+    width: 170px;
+    height: 50px;
+    transition: box-shadow 0.3s ease;
 }
+#fixedButton:hover {
+    box-shadow: 5px 5px 5px  #000000 ; 
+}
+
 
 #popupBackground {
     display: none;
@@ -603,7 +611,12 @@ input[type="file"] {
 
 .close-btn {
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
     cursor: pointer;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
 }
