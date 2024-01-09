@@ -83,7 +83,7 @@ function validateFileType(fileInput, type)
   } 
   else if (type === "audio") 
   {
-    allowedExtensions = ["mp3", "wav", "ogg"];
+    allowedExtensions = ["mp3", "wav", "ogg", "m4a"];
   } 
   else if (type === "book") 
   {
