@@ -39,6 +39,21 @@
             <img src="images/Jack.png" class="userIcon">
         </div>
         
-    </nav>
+    </nav>  
+
+
+    <button id="fixedButton" onclick="showPopup()">Upload a content</button>
+
+<div id="popupBackground"></div>
+
+<div id="popup">
+    <span class="close-btn" onclick="hidePopup()">X</span>
+    <button class="upload-btnVid" onclick="showFileInput('video')">Video</button>
+    <button class="upload-btnAud" onclick="showFileInput('audio')">Audio</button>
+    <button class="upload-btnBook" onclick="showFileInput('book')">Book</button>
+  </div>
+
+<!-- JS CODE -->
+<script src="/JS/app.js"></script>
 </body>
 </html>
