@@ -615,8 +615,19 @@ input[type="file"] {
     right: 10px;
     cursor: pointer;
 }
+/* -------------sidebar in author room studio ---------------- */
 
-.error-message {
-    color: red;
-    margin-top: 10px;
+.admRoomImg{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.bigGreen{
+    margin-left: 32.5px; 
+    color: #4DAF00; 
+    font-weight: 600; 
+    font-size: 20px;
 }
