@@ -2,13 +2,13 @@ var menuIcon = document.querySelector(".menuIcon");
 var sidebar = document.querySelector(".sidebar");
 var container = document.querySelector(".container");
 
-menuIcon.onclick = function()
+menuIcon.onclick = function() ///sidebar function
 {
     sidebar.classList.toggle("smallSidebar");
     container.classList.toggle("largeContainer");
 }
 
-function showPopup() 
+function showPopup() // by activating popup you activate its background
 {
     var popupBackground = document.getElementById("popupBackground");
     var popup = document.getElementById("popup");
@@ -17,7 +17,7 @@ function showPopup()
     popup.style.display = "block";
 }
 
-function hidePopup() 
+function hidePopup() // closing bg and popup
 {
     var popupBackground = document.getElementById("popupBackground");
     var popup = document.getElementById("popup");
@@ -51,13 +51,13 @@ function showFileInput(type)
 
   fileInput.addEventListener("change", function () 
   {
-    if (!validateFileType(fileInput, type)) 
+    if (!validateFileType(fileInput, type)) //when not supported file is chosen
     {
-      if (!alertTriggered) 
+      if (!alertTriggered) //and checker which checks whether alert trigered or not
       {
         alert("Please choose an appropriate file type.");
-        alertTriggered = true; // Set the flag to true after the first alert
-        setTimeout(function () 
+        alertTriggered = true; // setting it to true.
+        setTimeout(function () //adding cooldown for a alert bool
         {
           alertTriggered = false; // Reset the flag after a short delay
         }, 50);
@@ -65,29 +65,29 @@ function showFileInput(type)
       return;
     }
 
-    // Handle file upload logic here
-    alert("File uploaded successfully!");
-    hidePopup();
+    // alert for finish
+    alert("File is uploaded!");
+    hidePopup(); // popup dissapears
   });
 
-  fileInput.click();
+  fileInput.click(); ///opening window for file selection
 }
 
-function validateFileType(fileInput, type) 
+function validateFileType(fileInput, type) // file extension validation
 {
-  var allowedExtensions = [];
+  var allowedExtensions = []; // creating array for extensions
 
   if (type === "video") 
   {
-    allowedExtensions = ["mp4", "mov", "avi"];
+    allowedExtensions = ["mp4", "mov", "avi"]; // customizable
   } 
   else if (type === "audio") 
   {
-    allowedExtensions = ["mp3", "wav", "ogg", "m4a"];
+    allowedExtensions = ["mp3", "wav", "ogg", "m4a"];// customizable
   } 
   else if (type === "book") 
   {
-    allowedExtensions = ["pdf"];
+    allowedExtensions = ["pdf"]; // customizable
   }
 
   var fileName = fileInput.value.split('.').pop().toLowerCase();
