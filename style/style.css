@@ -132,10 +132,10 @@ input{
     padding-top: 4px;
 }
 
-.shortcutLinks a:first-child p{
+/* .shortcutLinks a:first-child p{
     color: #4DAF00;
     padding-top: 4px;
-}
+} */
 
 .sidebar hr{
     border: 0;
@@ -266,7 +266,7 @@ input{
     flex-basis: 30%;
 }
 .playVideo video{
-    width: 900px;
+    width: 880px;
     height: 500px;
 }
 
