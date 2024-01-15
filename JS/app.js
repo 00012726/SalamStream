@@ -108,6 +108,19 @@ function validateFileType(fileInput, type) // file extension validation
 }
 
 
+// ---------------popup------------
+var popup = document.getElementById("notificationPopup");
+var profileImage = document.getElementById("callPopup");
 
+profileImage.addEventListener("click", function (event) {
+  event.stopPropagation(); 
+  popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
+});
+
+document.addEventListener("click", function (event) {
+  if (event.target !== profileImage && !popup.contains(event.target)) {
+    popup.style.display = "none";
+  }
+});
 
 

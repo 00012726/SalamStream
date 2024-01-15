@@ -23,7 +23,9 @@ a{
     text-decoration: none;
     color: #fff;
 }
-
+body::-webkit-scrollbar {
+    display: none;
+}
 
 /* images */
 img{
@@ -90,7 +92,6 @@ nav{
 
 .nav-mid .searchBox img{
     width: 15px;
-
 }
 
 /* input */
@@ -214,7 +215,7 @@ input{
 .vidList .thumbnail{
     width: 100%;
     border-radius: 5px;
-    height: 60%;
+    height: 70%;
 }
 
 .vidList .flex-div{
@@ -632,3 +633,64 @@ input[type="file"] {
     font-weight: 600; 
     font-size: 20px;
 }
+
+.playAudiobtn{
+    transition: transform 0.5s ease-in-out;
+}
+.playAudiobtn:hover{
+    box-shadow: 2px 2px 2px #000000;
+    transform: scale(1.15);
+}
+
+/* Styles for the notification popup */
+.notification-popup {
+    position: fixed;
+    background-color: #2b2b2b;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.35s ease-in-out; 
+    top: 70px; 
+    right: 25px;
+    display: none;
+}
+
+.notification-popup:hover {
+    background-color: #2b2b2b; 
+}
+.arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px;
+    border-color: transparent transparent #2b2b2b transparent; 
+    top: -16px; 
+    right: 10px; 
+}
+
+.content {
+    text-align: left;
+    margin: 0; 
+}
+
+.popupNote {
+    display: block;
+    margin: 0; 
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    background: #2b2b2b;
+    padding: 8px 0; 
+}
+
+.popupNote:hover {
+    color: #4DAF00;
+}
+
+.sidebarStats{
+    padding-top: 15px;
+}
+  
