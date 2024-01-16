@@ -4,8 +4,8 @@ var container = document.querySelector(".container");
 
 menuIcon.onclick = function() ///sidebar function
 {
-    sidebar.classList.toggle("smallSidebar");
-    container.classList.toggle("largeContainer");
+  sidebar.classList.toggle("smallSidebar");
+  container.classList.toggle("largeContainer");
 }
 
 function showPopup() // by activating popup you activate its background
