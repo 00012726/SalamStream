@@ -693,4 +693,65 @@ input[type="file"] {
 .sidebarStats{
     padding-top: 15px;
 }
-  
+
+
+
+
+/* -------------------------BOOKS PAGE-------------------- */
+.readBtn{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4DAF00;
+    border-radius: 15px;
+}
+
+.readBtn p{
+    background-color: #4DAF00;
+    color: #000000;
+    border-radius: 50px;
+    height: 30px;
+    font-weight: 600;
+    padding-top: 3px;
+}
+
+.listContainerBook{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+}
+
+.bookInfo img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+
+/* ----------------------AUDIO----------------- */
+
+
+#audio-player-container {
+    position: relative;
+    width: 900px; 
+    height: 500px;
+}
+
+#audio-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#audio-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
