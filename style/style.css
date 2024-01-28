@@ -46,7 +46,7 @@ nav{
     background-color: #3b3b3b;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 101;
     height: 70px;
 }
 
@@ -753,5 +753,136 @@ input[type="file"] {
     width: 100%;
     height: 100%;
     object-fit: cover;
-
+    border-radius: 10px 10px 25px 25px;
 }
+
+
+/* -----------------------LOGIN FORM----------------- */
+.formBox{
+    margin: auto;
+}
+
+
+
+/* -------------------AUTHOR PAGE------------------- */
+
+.bgImg{
+    width: 100%;
+    height: 250px;
+    background: url(/images/banner.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.bgImg p{
+    color: #000000;
+    background-color: #d9d9d9;
+    font-size: 40px;
+    padding-left: 300px;
+}
+
+.authorImg{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    /* position: absolute; */
+    top: 25%;
+    left: 50%;
+    transform: translate(-300%, 100%);
+    border: #4DAF00 2px solid;
+}
+
+.authorImgName{
+    /* position: absolute; */
+    top: 25%;
+    left: 50%;
+    transform: translate(-290%, 560%);
+}
+
+.lineP{
+    margin-top: 110px;
+    background-color: #969696;
+    width: 100%;
+    height: 2px;
+}
+
+/* ====================AFTER LINE================= */
+
+.contentType{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 70px; /* Adjust according to your navbar height */
+    background-color: #3b3b3b;
+    z-index: 100; /* Ensure it's above other elements */
+    box-shadow: 0 0 5px #1c1c1c;
+}
+
+.contentType p{
+    padding-top: 10px;
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin: 5px;
+    border:transparent;
+    cursor: pointer;
+}
+.contentType p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.contentType a {
+    text-decoration: none;
+    color: #ccc;
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contentType a.active {
+    color: #4DAF00;
+}
+
+.contentType hr{
+    width: 1px;
+    height: 25px;
+    margin-top: 1px;
+    position: sticky;
+    z-index: 100;
+}
+
+
+.audioCC{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+    padding: 10px 100px;
+}
+
+.bookCC{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+    padding: 10px 100px;
+}
+
+.videoCC{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-column-gap: 16px;
+    grid-row-gap: 30px;
+    margin-top: 10px;
+    padding: 10px 100px;
+}
+
+

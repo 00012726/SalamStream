@@ -124,3 +124,31 @@ document.addEventListener("click", function (event) {
 });
 
 
+
+// Get the navigation bar and content type div
+var navbar = document.querySelector(".flex-div");
+var contentType = document.querySelector(".contentType");
+
+// Get the offset position of the content type div
+var sticky = contentType.offsetTop;
+
+// Add the sticky class to the content type div when you reach its scroll position
+function stickyContentType() 
+{
+    if (window.pageYOffset >= sticky) 
+    {
+        contentType.classList.add("sticky");
+    } 
+    else 
+    {
+        contentType.classList.remove("sticky");
+    }
+}
+
+// Call the stickyContentType function when the page is scrolled
+window.onscroll = function() 
+{
+    stickyContentType();
+};
+
+
