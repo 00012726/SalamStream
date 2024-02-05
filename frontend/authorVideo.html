@@ -4,35 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salam stream</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="/frontend/style/loginForm.css">
     <link rel="shortcut icon" type="x-icon" href="/icons/logoIcon.png">
 </head>
 <body>
-    <!-- navigation bar -->
-    <nav class="flex-div">
-        <div class="nav-left flex-div">
-            <a href="index.html"><img src="/icons/logoTransparent.svg" class="logoIconT"></a>
-        </div>
-        <div class="nav-right flex-div">
-            <a href="index.html"><img style="margin-right: 0px;" src="icons/homeW.png"></a>
-        </div>
-    </nav>
-
-    <div class="bgImg">
-        <p>*BEAUTIFUL CHANNEL BANNER*</p>      
-        <img class="authorImg" style="cursor:default;" src="/images/Jack.png">
-        <h1 class="authorImgName" >Jach Mason</h1>
+<!-- navigation bar -->
+<nav class="flex-div">
+    <div class="nav-left flex-div">
+        <img src="/frontend/icons/menu.png" class="menuIcon" style="display: none;">
+        <a href="index.html"><img src="/frontend/icons/logoTransparent.svg" class="logoIconT"></a>
     </div>
+
+    <div class="nav-mid flex-div" style="display: none;">
+        <div class="searchBox flex-div">
+            <input type="text" placeholder="Let's seacrh!">
+            <img src="/frontend/icons/search.png">
+        </div>
+    </div>
+
+    <div class="nav-right flex-div">
+        <img id="callPopup" src="/frontend/images/Jack.png" class="userIcon">
+    </div>
+</nav>
+
+<!-- -----popup--------- -->
+<div id="notificationPopup" class="notification-popup">
+    <div class="arrow"></div>
+    <div class="content">
+        <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+    </div>
+</div>
+
+    
+    
+    <div class="profileShowOff">
+        <div class="psf banner">
+            <p>*BACKGROUND BANNER*</p>
+        </div>
+        <div class="psf pi">
+            <img src="/frontend/images/Jack.png" alt="">
+        </div>
+        <div class="psf name">
+            <h2>Jack Mason</H2>
+        </div>
+    </div>
+    
+
+
+
     <div class="lineP">
         <hr>
     </div>
-    <div class="contentType">
+    <div class="contentType" style="display: flex;">
         <hr>
-        <a href="author.html" data-content-id="audioCC"><p>Audios</p></a>
+        <a href="author.html" data-content-id="audioCC"><p>Audiolar</p></a>
         <hr>
-        <a href="authorBook.html" data-content-id="bookCC"><p>Books</p></a>
+        <a href="authorBook.html" data-content-id="bookCC"><p>Kitoblar</p></a>
         <hr>
-        <a href="authorVideo.html" data-content-id="videoCC"><p style="color: #4DAF00;">Videos</p></a>
+        <a href="authorVideo.html" data-content-id="videoCC"><p style="color: #4DAF00;">Videolar</p></a>
         <hr>
     </div>
     <div class="lineP" style="margin-top: 0px;">
@@ -44,15 +73,15 @@
 <!-- ===========================VIDEOS=================== -->
 
 
-        <section class="videoSec">
+        <section class="videoSec" style="z-index: 100;">
             <div class="videoCC" id="videoCC">
                 <div class="listContainer">
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -64,10 +93,10 @@
                     </div>
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -79,26 +108,10 @@
                     </div>
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
-                            <div class="vidInfo">
-                                <a href="">
-                                    <p>Name of the video</p>
-                                </a>
-                                <p>Jack Mason</p>
-                                <p>2.4k Views &bull; 2 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
-                        <div class="flex-div">
-        
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -111,25 +124,10 @@
 
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
-                            <div class="vidInfo">
-                                <a href="">
-                                    <p>Name of the video</p>
-                                </a>
-                                <p>Jack Mason</p>
-                                <p>2.4k Views &bull; 2 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
-                        <div class="flex-div">
-        
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -142,10 +140,10 @@
 
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -157,25 +155,10 @@
                     </div>
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
-                            <div class="vidInfo">
-                                <a href="">
-                                    <p>Name of the video</p>
-                                </a>
-                                <p>Jack Mason</p>
-                                <p>2.4k Views &bull; 2 weeks</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
-                        <div class="flex-div">
-        
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -188,10 +171,40 @@
 
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Name of the video</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.4k Views &bull; 2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vidList">
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
+                        <div class="flex-div">
+        
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Name of the video</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.4k Views &bull; 2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="vidList">
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
+                        <div class="flex-div">
+        
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -204,10 +217,10 @@
 
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -220,10 +233,26 @@
 
 
                     <div class="vidList">
-                        <a href="playVid.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                         <div class="flex-div">
         
-                            <a href="author.html"><img src="/images/Jack.png"></a>
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Name of the video</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.4k Views &bull; 2 weeks</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="vidList">
+                        <a href="playVid.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
+                        <div class="flex-div">
+        
+                            <a href="author.html"><img src="/frontend/images/Jack.png"></a>
                             <div class="vidInfo">
                                 <a href="">
                                     <p>Name of the video</p>
@@ -239,6 +268,6 @@
     </div>
 
     <!-- ----------js code0-------------- -->
-    <script src="js/app.js"></script>
+    <script src="/frontend/js/app.js"></script>
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="/icons/logoIcon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/frontend/style/style.css">
+</head>
+<body>
+        <!-- navigation bar -->
+        <nav class="flex-div">
+            <div class="nav-left flex-div">
+                <img src="icons/menu.png" class="menuIcon" style="display: none;">
+                <a href="index.html"><img src="/frontend/icons/logoTransparent.svg" class="logoIconT"></a>
+            </div>
+    
+            <div class="adminPage">
+                <a href="/adminPage.html" class="">
+                    <h3>Administration room</h3>
+                </a> 
+            </div>
+    
+            <div class="nav-right flex-div">
+                <img id="callPopup" src="/frontend/images/Jack.png" class="userIcon">
+            </div>
+        </nav>
+    
+        <!-- -----popup--------- -->
+        <div id="notificationPopup" class="notification-popup">
+            <div class="arrow"></div>
+            <div class="content">
+                <a href="adminPage.html"><p class="popupNote">Admin Page</p></a>
+                <a href="uploadContent.html"><p class="popupNote">Salam Studio</p></a>
+                <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+            </div>
+        </div>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="subList">
+            <h3 class="yC">Yangi kontent</h3>
+            <hr>
+            <a href="moderationPage.html" target="_blank">
+                <img src="/frontend/images/Jack.png"> 
+                <p>Jack Mason</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+            <a href="moderationPage.html" target="_blank">
+                <img src="/frontend/images/simon.png"> 
+                <p>Simon Bolivar</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+            <a href="moderationPage.html">
+                <img src="/frontend/images/megan.png"> 
+                <p>Megan Clinton</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+            <a href="moderationPage.html">
+                <img src="/frontend/images/tom.png"> 
+                <p>Tom Hardy</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+            <a href="moderationPage.html">
+                <img src="/frontend/images/cameron.png"> 
+                <p>Cameron Diaz</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container" style="display: flex; align-items: center; justify-content: center; margin-top: 200px;">
+        <div class="boxContainer">
+            <h3> <span style="background-color: #2d2d2d;">Qilayotgan xizmatingiz uchun rahmat! <h3></h3>
+                Ishingizda charchamang!
+            </h3>
+             
+        </div>  
+    </div>
+     
+
+    <!-- JS CODE -->
+    <script src="/frontend/js/app.js"></script>
+</body>
+</html>

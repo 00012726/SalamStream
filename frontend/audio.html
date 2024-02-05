@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salam Stream</title>
-    <link rel="stylesheet" href="/style/style.css"> 
+    <link rel="stylesheet" href="/frontend/style/style.css"> 
     <link rel="shortcut icon" type="x-icon" href="/icons/logoIcon.png">
 </head>
 <body>
@@ -12,20 +12,20 @@
     <nav class="flex-div">
         <!-- ----------- -->
         <div class="nav-left flex-div">
-            <img src="/icons/menu.png" class="menuIcon">
-            <a href="audio.html"><img src="icons/logoTransparent.svg" class="logoIconT"></a>
+            <img src="/frontend/icons/menu.png" class="menuIcon">
+            <a href="audio.html"><img src="/frontend/icons/logoTransparent.svg" class="logoIconT"></a>
         </div>
         <!-- ----------- -->
         <div class="nav-mid flex-div">
             <div class="searchBox flex-div">
                 <input type="text" placeholder="Let's seacrh!">
-                <img src="/icons/search.png">
+                <img src="/frontend/icons/search.png">
             </div>
         </div>
         <!-- ------------- -->
         <div class="nav-right flex-div">
             <!-- <img src="icons/notification.png"> -->
-            <img id="callPopup" src="/images/Jack.png" class="userIcon">
+            <img id="callPopup" src="/frontend/images/Jack.png" class="userIcon">
         </div>
         <!-- ----------- -->
     </nav>
@@ -36,7 +36,7 @@
         <div class="content">
             <a href="adminPage.html"><p class="popupNote">Admin Page</p></a>
             <a href="uploadContent.html"><p class="popupNote">Salam Studio</p></a>
-            <a href="mustLogin.html"><p class="popupNote">Log out</p></a>
+            <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
         </div>
     </div>
 
@@ -44,10 +44,10 @@
     <div class="sidebar">
         <!-- ----------- -->
         <div class="shortcutLinks">
-            <a href="index.html"> <img src="/icons/clapperboard.png"> <p>Videos</p> </a>
-            <a href="book.html"> <img src="/icons/open-book.png"> <p>Books</p> </a>
-            <a href="audio.html"> <img src="/icons/sound-barsG.png"> 
-                <p style="color: #4DAF00;">Audios</p> </a>
+            <a href="index.html"> <img src="/frontend/icons/clapperboard.png"> <p>Videolar</p> </a>
+            <a href="book.html"> <img src="/frontend/icons/open-book.png"> <p>Kitoblar</p> </a>
+            <a href="audio.html"> <img src="/frontend/icons/sound-barsG.png"> 
+                <p style="color: #4DAF00;">Audiolar</p> </a>
             <!--<hr style=" margin: 15px 10px; 
                         margin-left: 0px;
                         background-color: #fff; 
@@ -58,14 +58,23 @@
         </div>
         <!-- ----------- -->
         <div class="subList">
-            <h3>Subscribed</h3>
-            <a href="author.html"> <img src="/images/Jack.png"> <p>Jack Mason</p> </a>
-            <a href="author.html"> <img src="/images/simon.png"> <p>Simon Bolivar</p> </a>
-            <a href="author.html"> <img src="/images/megan.png"> <p>Megan Clinton</p> </a>
-            <a href="author.html"> <img src="/images/tom.png"> <p>Tom Hardy</p> </a>
-            <a href="author.html"> <img src="/images/cameron.png"> <p>Cameron Diaz</p> </a>
+            <h3>Obuna bo'lingan kanallar</h3>
+            <a href="author.html"> <img src="/frontend/images/Jack.png"> <p>Jack Mason</p> </a>
+            <a href="author.html"> <img src="/frontend/images/simon.png"> <p>Simon Bolivar</p> </a>
+            <a href="author.html"> <img src="/frontend/images/megan.png"> <p>Megan Clinton</p> </a>
+            <a href="author.html"> <img src="/frontend/images/tom.png"> <p>Tom Hardy</p> </a>
+            <a href="author.html"> <img src="/frontend/images/cameron.png"> <p>Cameron Diaz</p> </a>
         </div>
         <!-- ----------- -->
+    </div>
+    <div class="contentType">
+        <hr>
+        <a href="#" data-content-id="audioCC"><p  style="color: #4DAF00;">Audiolar</p></a>
+        <hr>
+        <a href="book.html" data-content-id="bookCC"><p>Kitoblar</p></a>
+        <hr>
+        <a href="index.html" data-content-id="videoCC"><p>Videolar</p></a>
+        <hr>
     </div>
 
     <div class="container">
@@ -73,9 +82,9 @@
         <div class="listContainer">
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
                 <div class="flex-div">
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Claim all Roman empire's prov..</p>
@@ -87,10 +96,10 @@
             </div>
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>What am I doing with my life..</p>
@@ -102,10 +111,10 @@
             </div>
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail2.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail2.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Please give me higher mark</p>
@@ -118,10 +127,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail3.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail3.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Ham must be processed or proce..</p>
@@ -134,10 +143,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail4.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail4.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Why america was not colonised..</p>
@@ -150,10 +159,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail5.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail5.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Devine destiny of live!</p>
@@ -166,10 +175,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail6.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail6.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Insane rap session with SnoopD..</p>
@@ -182,10 +191,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail7.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail7.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>How to become a monk..</p>
@@ -198,10 +207,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail8.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail8.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>How to get rich in 1 second!</p>
@@ -213,9 +222,9 @@
             </div>
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
                 <div class="flex-div">
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Claim all Roman empire's prov..</p>
@@ -227,10 +236,10 @@
             </div>
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail1.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail1.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>What am I doing with my life..</p>
@@ -242,10 +251,10 @@
             </div>
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail2.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail2.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Please give me higher mark</p>
@@ -258,10 +267,10 @@
             
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail3.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail3.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Ham must be processed or proce..</p>
@@ -274,10 +283,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail4.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail4.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Why america was not colonised..</p>
@@ -290,10 +299,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail5.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail5.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Devine destiny of live!</p>
@@ -306,10 +315,10 @@
 
 
             <div class="vidList">
-                <a href="playAudio.html"> <img src="/images/thumbnail6.png" class="thumbnail"> </a>
+                <a href="playAudio.html"> <img src="/frontend/images/thumbnail6.png" class="thumbnail"> </a>
                 <div class="flex-div">
 
-                    <a href="playAudio.html"><img class="playAudiobtn" src="/icons/PlayButton.png"></a>
+                    <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
                     <div class="vidInfo">
                         <a href="">
                             <p>Insane rap session with SnoopD..</p>
@@ -330,6 +339,6 @@
 
 
     <!-- JS LINK -->
-    <script src="/JS/app.js"></script>
+    <script src="/frontend/js/app.js"></script>
 </body>
 </html>

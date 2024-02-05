@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalamStudio</title>
+    <link rel="stylesheet" href="/frontend/style/style.css">
+    <link rel="shortcut icon" type="x-icon" href="/frontend/icons/logoIcon.png">
+</head>
+<body>
+        <!-- navigation bar -->
+        <nav class="flex-div">
+            <div class="nav-left flex-div">
+                <img src="icons/menu.png" class="menuIcon" style="display: none;">
+                <a href="index.html"><img src="/frontend/icons/logoTransparent.svg" class="logoIconT"></a>
+            </div>
+    
+            <div class="notForUserPage">
+                <a href="/frontend/uploadContent.html">
+                    <h3 style="
+                        display: inline-block;">Salam</h3> 
+                    <h3 style="
+                        display: inline-block; 
+                        color: #4DAF00;
+                        position: relative; 
+                        padding: 0;
+                        margin: 0;">Studio</h3>
+                </a>
+            </div>
+    
+            <div class="nav-right flex-div">
+                <img id="callPopup" src="/frontend/images/Jack.png" class="userIcon">
+            </div>
+        </nav>
+    
+        <!-- -----popup--------- -->
+        <div id="notificationPopup" class="notification-popup">
+            <div class="arrow"></div>
+            <div class="content">
+                <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+            </div>
+        </div>
+
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="shortcutLinks">
+            <img href="audio.html" src="/frontend/images/Jack.png" class="admRoomImg flex-div">
+            <a href="audio.html"><p class="bigGreen">Sizning Kanalingiz</p> </a>
+            <a href="author.html"> <img src="/frontend/icons/library.png"> <p>Kontent</p> </a>
+            <hr>
+        </div>
+        <div class="subList">
+            <p class="bigGreen" style="margin: 15px 49px; ">Statistika</p>
+            <p class="sidebarStats">25 764 obunchilar</p>
+            <p class="sidebarStats">14 video yuklandi</p>
+            <p class="sidebarStats">4 audio yuklandi</p>
+            <p class="sidebarStats">8 kitob yuklandi</p>
+        </div>
+    </div>
+
+
+
+    <!-- ----------SEPARATE FIXED UPLOAD BUTTON------------- -->
+<button id="fixedButton" onclick="showPopup()">Kontent yuklash</button>
+
+<!-- -------popup to choose file type for upload--------- -->
+<div id="popupBackground"></div>
+<div id="popup">
+    <span class="close-btn" onclick="hidePopup()">x</span>
+    <button class="upload-btnVid" onclick="showFileInput('video')">Video</button>
+    <button class="upload-btnAud" onclick="showFileInput('audio')">Audio</button>
+    <button class="upload-btnBook" onclick="showFileInput('book')">Kitob</button>
+</div>
+
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <div class="boxContainer">
+        <h3>Ushbu sahifada siz kontent yuklaysiz</h3> 
+    </div>  
+</div>
+ 
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <div class="boxContainer upl">
+        <h3 class="uplTxt">Video yuklasangiz bo'ladi</h3>
+    </div>
+    <div class="boxContainer upl">
+        <h3 class="uplTxt">Audio yuklasangiz bo'ladi</h3>
+    </div>
+    <div class="boxContainer upl">
+        <h3 class="uplTxt">Kitob(.pdf) yuklasangiz bo'ladi</h3>
+    </div>
+</div>
+
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <div class="boxContainer">
+        <h3>Ilm tarqatish yo'lida hissangiz uchun rahmat!</h3> 
+    </div>  
+</div>
+<!-- JS link -->
+<script src="/frontend/js/app.js"></script>
+</body>
+</html>

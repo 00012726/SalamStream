@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="/frontend/style/style.css">
+    <link rel="shortcut icon" href="/frontend/icons/logoIcon.png">
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="/frontend/icons/menu.png" class="menuIcon" style="display: none;">
+            <a href="index.html"><img src="/frontend/icons/logoTransparent.svg" class="logoIconT"></a>
+        </div>
+
+        <div class="nav-mid flex-div" style="display: none;">
+            <div class="searchBox flex-div">
+                <input type="text" placeholder="Let's seacrh!">
+                <img src="/frontend/icons/search.png">
+            </div>
+        </div>
+
+        <div class="nav-right flex-div">
+            <img id="callPopup" src="/frontend/images/Jack.png" class="userIcon">
+        </div>
+    </nav>
+
+    <!-- -----popup--------- -->
+    <div id="notificationPopup" class="notification-popup">
+        <div class="arrow"></div>
+        <div class="content">
+            <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+        </div>
+    </div>
+
+
+<!-- ---main--- -->
+    <div class="container playContainer">
+
+        <div class="row">
+
+            <div class="playVideo">
+
+                <video controls>
+                    <source src="/frontend/videos/vidmeme4.mp4" type="video/mp4">
+                </video>
+                <!-- name of the video -->
+                <h3>
+                    Name of the video it will be changed I swear!
+                </h3>
+
+                <hr class="hrPlayVid">
+
+                <div class="publisher">
+                    <img src="/frontend/images/Jack.png">
+                    <div>
+                        <p>
+                            Jack Mason
+                        </p>
+                    </div>
+
+                    
+                </div>
+                
+            </div>
+
+            <!-- ----right sidebar---- -->
+            <div class="rightSidebar" style="flex-basis: 20%; border-left: 2px solid white; padding-left: 0px;" >
+                
+                <h3 style="margin-bottom: 15px;">
+                    Video haqida izoh qoldiring
+                </h3>
+                <textarea name="moderatorComment" id="moderComment"  rows="20" placeholder="Video haqida izoh qoldiring">
+                </textarea>
+                <div class="approveBtn">
+                    <button type="button" style="background-color: red;">
+                        Kontent xavfli
+                    </button>
+                    <button type="button" style="margin-left: 10px; background-color: #4DAF00;">
+                        Kontent xavfsiz
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- JS CODE -->
+<script src="/frontend/js/app.js"></script>
+
+</body>
+</html>

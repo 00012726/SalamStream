@@ -9,8 +9,6 @@
     4DAF00 -> active text and buttons:green
     969696 -> sidebar line:grey
  */
-
-
 *{
     margin: 0;
     padding: 0;
@@ -124,6 +122,7 @@ input{
 .shortcutLinks a{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 20px;
     width: fit-content;
     flex-wrap: wraps;
@@ -142,20 +141,30 @@ input{
     border: 0;
     height: 1px;
     background-color: #969696;
-    width: 85%;
+    width: 90%;
 }
 
 .subList h3{
     font-size: 13px;
-    margin: 20px 0;
-    color: #cccccc;
+    margin: 15px 0;
+    color: #ccc;
+}
+
+.subList .yC{
+    font-size: 20px;
+    margin-left: 30px;
+    color: #fff;
+    margin-top: 0px;
+    margin-bottom: 15px;
 }
 .subList a{
     display: flex;
     align-items: center;
+    margin-top: 10px;
     margin-bottom: 20px;
-    width: fit-content;
+    width: 100%;
     flex-wrap: wrap;
+    position: relative;
 }
 .subList a img{
     width: 25px;
@@ -260,7 +269,7 @@ input{
 }
 
 .playVideo{
-    flex-basis: 69%;
+    flex-basis: 69%;    
     padding-left: 3%;
     padding-right: 2%;
 }
@@ -271,6 +280,7 @@ input{
     width: 880px;
     height: 500px;
 }
+
 
 .playVidInfo a p{
     font-weight: 1000;
@@ -486,21 +496,24 @@ input{
         padding-left: 5%;
         padding-right: 5%;
     }
-    .nav-right img{
+    /* .nav-right img{
         display: none;
-    }
+    } */
     .nav-right .userIcon{
         display: block;
         width: 30px;
         margin-left: 0px;
     }
-    .nav-mid .searchBox input{
-        width: 100px;
-        margin-left: 10px;
+    .nav-mid {
+        display: none;
     }
     .flex-div .nav-left .logoIconT{
         width: 100px;
         height: 50px;
+    }
+    
+    .contentType{
+        display: block;
     }
 
 }
@@ -628,7 +641,7 @@ input[type="file"] {
 }
 
 .bigGreen{
-    margin-left: 32.5px; 
+    margin-left: 10px; 
     color: #4DAF00; 
     font-weight: 600; 
     font-size: 20px;
@@ -766,7 +779,7 @@ input[type="file"] {
 
 /* -------------------AUTHOR PAGE------------------- */
 
-.bgImg{
+/*.bgImg{
     width: 100%;
     height: 250px;
     background: url(/images/banner.jpg);
@@ -776,37 +789,70 @@ input[type="file"] {
     align-content: center;
 }
 
-.bgImg p{
+ .bgImg p{
     color: #000000;
     background-color: #d9d9d9;
     font-size: 40px;
     padding-left: 300px;
+} */
+
+.profileShowOff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; 
 }
 
-.authorImg{
-    width: 125px;
-    height: 125px;
+.psf {
+    width: 100%; 
+    text-align: center;
+}
+
+
+.banner p {
+    color: #000000;
+    background-color: #ffffff;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+    font-size: 40px;
+    padding-top: 80px;
+}
+
+.pi {
+    position: relative;
+    z-index: 2;
+}
+
+.pi img {
+    width: 100px;
+    height: auto;
     border-radius: 50%;
-    /* position: absolute; */
-    top: 25%;
-    left: 50%;
-    transform: translate(-300%, 100%);
-    border: #4DAF00 2px solid;
+    position: absolute;
+    margin-left: -50px;
+    border: 2px solid #4DAF00;
+    margin-top: -50px;
 }
 
-.authorImgName{
-    /* position: absolute; */
-    top: 25%;
-    left: 50%;
-    transform: translate(-290%, 560%);
+.name{
+    margin-top: 60px;
+    height: auto;
+    padding-bottom: -50px;
 }
+
 
 .lineP{
-    margin-top: 110px;
+    margin-top: 30px;
     background-color: #969696;
     width: 100%;
     height: 2px;
 }
+
+
+
+
+
 
 /* ====================AFTER LINE================= */
 
@@ -815,9 +861,9 @@ input[type="file"] {
     align-items: center;
     justify-content: center;
     position: sticky;
-    top: 70px; /* Adjust according to your navbar height */
+    top: 70px; 
     background-color: #3b3b3b;
-    z-index: 50; /* Ensure it's above other elements */
+    z-index: 50; 
     box-shadow: 0 0 5px #1c1c1c;
 }
 
@@ -854,8 +900,77 @@ input[type="file"] {
     height: 25px;
     margin-top: 1px;
     position: sticky;
-    z-index: 50;
+    z-index: 0;
 }
+
+@media (max-width: 900px)
+{
+    .contentType{
+        z-index: 50;
+    }
+}
+
+
+
+.contentType {
+    display: none; 
+}
+
+/* Media query for smaller screens (max-width: 900px) */
+@media (max-width: 900px) {
+    .contentType {
+        display: flex; /* Show for smaller screens */
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 70px; /* Adjust according to your navbar height */
+        background-color: #3b3b3b;
+        z-index: 50; /* Ensure it's above other elements */
+        box-shadow: 0 0 5px #1c1c1c;
+    }
+
+    /* Additional styles for .contentType */
+    .contentType p {
+        padding-top: 10px;
+        padding: 10px;
+        padding-left: 60px;
+        padding-right: 60px;
+        margin: 5px;
+        border: transparent;
+        cursor: pointer;
+    }
+
+    .contentType p {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .contentType a {
+        text-decoration: none;
+        color: #ccc;
+        padding: 10px 20px;
+        margin: 0 5px;
+        font-weight: 700;
+        transition: color 0.3s ease;
+    }
+
+    .contentType a.active {
+        color: #4DAF00;
+    }
+
+    .contentType hr {
+        width: 1px;
+        height: 25px;
+        margin-top: 1px;
+        position: sticky;
+        z-index: 0;
+    }
+}
+
+
+
+
 
 
 .audioCC{
@@ -883,6 +998,136 @@ input[type="file"] {
     grid-row-gap: 30px;
     margin-top: 10px;
     padding: 10px 100px;
+}
+
+@media (max-width: 900px) {
+    .bookCC {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+    .videoCC {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+    .audioCC {
+        padding: 10px 20px; /* Adjust padding for smaller screens */
+    }
+    .contentType p{
+        padding: 10px 0px;
+    }
+}
+
+
+/* =====================STUDIO PAGE======================== */
+
+.container .boxContainer{
+    background-color: #2d2d2d;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 50%;
+    height: 100px;
+    border-radius: 20px;
+}
+
+.container .boxContainer{
+    align-items: center;
+    justify-content: center;
+}
+
+.container .boxContainer h3{
+    background-color: #2b2b2b;
+    display: block;
+}
+
+.container .boxContainer li{
+    background-color: #2b2b2b;
+    display: block;
+}
+
+
+.secondRow{
+    background-color: #2b2b2b;
+}
+
+.upl{
+    margin: 5px 10px;
+    height: 100px;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-220%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+    /* display: none; */
+}
+
+
+/* Adjust spacing for responsiveness */
+@media (max-width: 900px) {
+    .notification-icon {
+        margin-right: 5px; /* Reduce spacing for smaller screens */
+    }
+}
+
+
+
+/* =====================ADMIN PANEL MAIN CONTAINER=============================================== */
+
+
+.mainAdmPanel{
+    display: inline;
+    background-color: #2d2d2d;
+    width: 300px;
+    height: 100px;
+}
+
+.mainAdmPanel{
+    background-color: #2d2d2d;
+}
+
+
+
+
+/* ===================================MODERATION PAGE=========================== */
+.rightSidebar textarea{
+    width: 430px;
+    border: 2px solid #ccc;
+    height: fit-content;
+    resize: vertical;
+    border-radius: 5px;
+}
+
+
+.approveBtn{
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 4%;
+}
+
+.approveBtn button{
+    width: 160px;
+    height: 40px;
+    border: none;
+    width: 45%;
+    color: #fff;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 900px){
+
+    #audio-player-container {
+        width: 100%;
+        height: 30%;
+    }
+    #searchBar{
+        display: none;
+    }
+
 }
 
 
