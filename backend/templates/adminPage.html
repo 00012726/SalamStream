@@ -90,7 +90,7 @@
             </div>
     
             <div class="nav-right flex-div">
-                <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
+                {{ user.username }} <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
             </div>
         </nav>
     
@@ -98,9 +98,7 @@
         <div id="notificationPopup" class="notification-popup">
             <div class="arrow"></div>
             <div class="content">
-                <a href="adminPage.html"><p class="popupNote">Admin Page</p></a>
-                <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
-                <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
             </div>
         </div>
 
