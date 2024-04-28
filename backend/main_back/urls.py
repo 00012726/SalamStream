@@ -30,9 +30,7 @@ urlpatterns = [
     path('audio/<int:audio_id>/success/', change_audio_status, {'new_status': 'SUCCESS'}, name='change_audio_success'),
     path('audio/<int:audio_id>/cancel/', change_audio_status, {'new_status': 'CANCEL'}, name='change_audio_cancel'),
     path('book/<int:book_id>/success/', change_book_status, {'new_status': 'SUCCESS'}, name='change_book_success'),
-    path('book/<int:book_id>/cancel/', change_book_status, {'new_status': 'CANCEL'}, name='change_book_cancel'),
-
-
+    path('book/<int:book_id>/cancel/', change_book_status, {'new_status': 'CANCEL'}, name='change_book_cancel'),    
 ]
 
 
