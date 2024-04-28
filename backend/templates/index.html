@@ -46,6 +46,23 @@
         <div class="arrow"></div>
         <div class="content">
             {% if user.user_type == 'Moderator' %}
+                <a href="{% url 'admins' %}"><p class="popupNote">Admin Page</p></a>
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+            {% elif user.user_type == 'Content_maker' %}
+                <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+            {% elif user.user_type == 'User' %}
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+            {% else %}
+                <a href="{% url 'login' %}"><p class="popupNote">Login</p></a>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- <div id="notificationPopup" class="notification-popup">
+        <div class="arrow"></div>
+        <div class="content">
+            {% if user.user_type == 'Moderator' %}
                 <a href="{% url 'admins' %}"><p class="popupNote">Admin Page </p></a>
                 {% if user.is_authenticated %}
                     <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
@@ -61,7 +78,7 @@
             {% endif %}  
             {% endif %}
         </div>
-    </div>
+    </div> -->
 
     <!-- sidebar -->
     <div class="sidebar" style="z-index: 10;">
