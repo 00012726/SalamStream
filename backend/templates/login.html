@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="{% static 'loginForm.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+    <div class="logo">
+        <a href="#"><img style="z-index: 100;" src="{% static 'icons/logoTransparent.svg' %}"></a>
+    </div>
+    <div class="loginBox">
+        <h3>Login</h3>
+        <form method="post" style="background-color: #2b2b2b;">
+            {% csrf_token %}
+            {% if form.errors %}
+                <p>Error:</p>
+                <ul>
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            <div class="txtBox">
+                <input type="text" placeholder="username" name="username">
+            </div>
+            <div class="txtBox">
+                <input type="password" placeholder="password" name="password" id="id_password1">
+            </div>
+            <button class="btnSubmit" type="submit">Login</button>
+            <a class="shaking-element" href="{% url 'register' %}" style="margin-bottom: 0;
+                        color: rgb(167, 71, 71);
+                        font-size: 12px;
+                        text-decoration: underline;
+                        background-color: #2b2b2b;
+                        margin-top: 10px;">Ro'yhatdan o'tmaganmisiz?</a>
+        </form>
+    </div>
+    <!-- JS CODE -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

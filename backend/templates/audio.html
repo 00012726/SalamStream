@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+<style>
+        .search-button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 0 5px 5px 0;
+    }
+</style>    
+    <!-- navigation bar -->
+    <nav class="flex-div">
+        <!-- ----------- -->
+        <div class="nav-left flex-div">
+            <img src="{% static 'icons/menu.png' %}" class="menuIcon">
+            <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+        </div>
+        <!-- ----------- -->
+        <div class="nav-mid flex-div">
+            <div class="searchBox flex-div">
+                <form method="get" action="{% url 'audio' %}" class="search-form">
+                    <input type="text" name="q" placeholder="Let's search!">
+                    <button type="submit" class="search-button">
+                        <img src="{% static 'icons/search.png' %}" alt="Search">
+                    </button>
+                </form>
+            </div>
+        </div>
+        <!-- ------------- -->
+        <div class="nav-right flex-div">
+            <!-- <img src="icons/notification.png"> -->
+            <div class="nav-right flex-div">
+                {{ user.username }}    <img id="callPopup" style="margin-left: 10%;" src="{% static 'images/Jack.png' %}" class="userIcon">
+            </div>
+        </nav>
+    
+        <!-- -----popup--------- -->
+        <div id="notificationPopup" class="notification-popup">
+            <div class="arrow"></div>
+            <div class="content">
+                {% if user.user_type == 'Moderator' %}
+                    <a href="{% url 'admins' %}"><p class="popupNote">Admin Page </p></a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+                    {% else %}  
+                        <a href="{% url 'login' %}"><p class="popupNote">Login</p></a> 
+                    {% endif %}    
+                {% else %}    
+                <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+                {% else %}  
+                    <a href="{% url 'login' %}"><p class="popupNote">Login</p></a> 
+                {% endif %}  
+                {% endif %}
+            </div>
+        </div>
+    
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <!-- ----------- -->
+        <div class="shortcutLinks">
+            <a href="{% url 'home' %}"> <img src="{% static 'icons/clapperboard.png' %}"> 
+            <p>Videolar</p> </a>
+            <a href="{% url 'book' %}"> <img src="{% static 'icons/open-book.png' %}"> <p>Kitoblar</p> </a>
+            <a href="{% url 'audio' %}"> <img src="{% static 'icons/sound-barsG.png' %}"> <p style="color: #4DAF00;">Audiolar</p> </a>
+            <hr>
+        </div>
+        <!-- ----------- -->
+        
+        <!-- ----------- -->
+    </div>
+    <div class="contentType">
+        <hr>
+        <a href="#" data-content-id="audioCC"><p style="color: #4DAF00;">Audiolar</p></a>
+        <hr>
+        <a href="{% url 'book' %}" data-content-id="bookCC"><p>Kitoblar</p></a>
+        <hr>
+        <a href="{% url 'home' %}" data-content-id="videoCC"><p>Videolar</p></a>
+        <hr>
+    </div>
+
+    <div class="container">
+
+        <div class="listContainer">
+           {% if audios %} 
+           {% for audio in audios %} 
+            {% if audio.audio_status == 'PROGRESS' %}
+
+            {% elif audio.audio_status == 'CANCEL' %}
+
+            {% else %}
+                <div class="vidList">
+                    <a href="{% url 'audio_detail' audio.pk %}"> <img src="{{ audio.thumbnail_photo.url }}"  style="width: 250px;height: 250px; object-fit: cover;" class="thumbnail"> </a>
+                    <div class="flex-div">
+                        <a href="{% url 'audio_detail' audio.pk %}"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                        <div class="vidInfo">
+                            <a href="{% url 'audio_detail' audio.pk %}">
+                                <p>{{ audio.title }}</p>
+                            </a>
+                            <p>{{ audio.user.username }}</p>
+                            <p>{{ audio.created_at|timesince }} ago</p>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            {% else %}
+            <p> Audio not found!</p>
+            {% endif %}    
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- JS LINK -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

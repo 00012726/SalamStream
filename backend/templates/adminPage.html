@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<style>
+.btn.btn-primary {
+    background-color: #4DAF00;
+    border-color: #4DAF00;
+    color: #fff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.btn.btn-primary:hover {
+    background-color: #52a414;
+    border-color: #52a414;
+    color: #fff;
+}
+
+.btn.btn-primary:focus, .btn.btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(12, 180, 70, 0.5);
+}
+
+.btn.btn-primary.disabled, .btn.btn-primary:disabled {
+    background-color: #52a414;;
+    border-color: #52a414;;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.btn.btn-danger {
+    background-color: #9f371d;
+    border-color: #9f371d;
+    color: #fff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.btn.btn-danger:hover {
+    background-color: #d14c4c;
+    border-color: #d14c4c;
+    color: #fff;
+}
+
+.btn.btn-danger:focus, .btn.btn-danger.focus {
+    box-shadow: 0 0 0 0.2rem rgba(12, 180, 70, 0.5);
+}
+
+.btn.btn-danger.disabled, .btn.btn-danger:disabled {
+    background-color: #52a414;;
+    border-color: #52a414;;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0.65;
+}
+</style>    
+        <!-- navigation bar -->
+        <nav class="flex-div">
+            <div class="nav-left flex-div">
+                <img src="icons/menu.png" class="menuIcon" style="display: none;">
+                <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+            </div>
+    
+            <div class="adminPage">
+                <a href="/adminPage.html" class="">
+                    <h3>Administration room</h3>
+                </a> 
+            </div>
+    
+            <div class="nav-right flex-div">
+                <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
+            </div>
+        </nav>
+    
+        <!-- -----popup--------- -->
+        <div id="notificationPopup" class="notification-popup">
+            <div class="arrow"></div>
+            <div class="content">
+                <a href="adminPage.html"><p class="popupNote">Admin Page</p></a>
+                <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
+                <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+            </div>
+        </div>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="subList">
+            <h3 class="yC">Yangi videolar</h3>
+            <hr>
+           {% for u_video in user_videos|slice:3 %} 
+            <a href="{% url 'audio_detail' u_video.pk %}">
+                <img src="{% static 'images/cameron.png' %}"> 
+                <p>{{ u_video.title }}</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+           {% endfor %} 
+           <h3 class="yC">Yangi audiolar</h3>
+           <hr>
+           {% for u_audio in user_audios|slice:3 %} 
+            <a href="{% url 'video_detail' u_audio.pk %}">
+                <img src="{% static 'images/cameron.png' %}"> 
+                <p>{{ u_audio.title }}</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+           {% endfor %} 
+           <h3 class="yC">Yangi kitoblar</h3>
+           <hr>
+           {% for u_book in user_books|slice:3 %} 
+            <a href="{{ u_book.book_file.url }}">
+                <img src="{% static 'images/cameron.png' %}"> 
+                <p>{{ u_book.title }}</p>
+                <div class="notification-icon">
+                    <span class="notification-dot"></span>
+                </div>
+            </a>
+           {% endfor %} 
+        </div>
+    </div>
+
+    <div class="container" style="display: flex; align-items: center; justify-content: center;">
+        <div class="boxContainer">
+            <h3> <span style="background-color: #2d2d2d;">Qilayotgan xizmatingiz uchun rahmat! <h3></h3>
+                Ishingizda charchamang!
+            </h3>
+             
+        </div>  
+    </div>
+
+    <div class="container">
+        <h3>Modification videos</h3>
+        <br>
+        <div class="row">
+            {% for video in user_videos %}
+                <div class="col-md-3">
+                    <a href="{% url 'video_detail' video.pk %}"> 
+                        <video controls style="width: 250px;">
+                            <source src="{{ video.video_file.url }}" type="video/mp4">
+                        </video>
+                    </a>
+                <br>
+                <p>{{ video.title }}</p>
+                <br>
+               
+                {% if video.video_status == 'PROGRESS' %}
+                    <p><b>Status</b>: Progress</p>
+                {% else %}    
+                <p>Video status: {{ video.video_status }}</p>
+                <br>
+                {% endif %}
+                {% if user.user_type == 'Moderator' %}
+                    <a class="btn btn-primary" href="{% url 'change_video_success' video_id=video.pk %}">Set Success</a>
+                    <a class="btn btn-danger" href="{% url 'change_video_cancel' video_id=video.pk %}">Set Cancel</a>
+                {% endif %}
+                </div>
+            {% empty %}
+                <li>No videos uploaded yet.</li>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="container">
+        <h3>Modification audios</h3>
+        <br>
+        <div class="row">
+            {% for audio in user_audios %}
+                <div class="col-md-3">
+                    <a href="{% url 'audio_detail' audio.pk %}"> 
+                        <audio controls style="width: 250px;">
+                            <source src="{{ audio.audio_file.url }}" type="audio/mpeg">
+                        </audio>
+                    </a>
+                <br>    
+                {% if audio.audio_status == 'PROGRESS' %}
+                    <p><b>Status</b>: Progress</p>
+                {% else %}  
+                <br>  
+                <p>Audio status: {{ audio.audio_status }}</p>
+                <br>
+                {% endif %}
+                {% if user.user_type == 'Moderator' %}
+                    <a class="btn btn-primary" href="{% url 'change_audio_success' audio_id=audio.pk %}">Set Success</a>
+                    <a class="btn btn-danger" href="{% url 'change_audio_cancel' audio_id=audio.pk %}">Set Cancel</a>
+                {% endif %}
+                </div>
+            {% empty %}
+                <li>No videos uploaded yet.</li>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="container">
+        <h3>Modification books</h3>
+        <br>
+        <div class="row">
+            {% for book in user_books %}
+                <div class="col-md-3">
+                  
+                    <a href="{{ book.book_file.url }}"> 
+                        <img src="{{ book.thumbnail_photo.url }}" style="width: 300px;height: 300px;" alt="">
+                    </a>
+                    <h3>{{ book.title }}</h3>
+                {% if book.book_status == 'PROGRESS' %}
+                    <p><b>Status</b>: Progress</p>
+                {% else %}  
+                <br>  
+                <p>Book status: {{ book.book_status }}</p>
+                <br>
+                {% endif %}
+                {% if user.user_type == 'Moderator' %}
+                    <a class="btn btn-primary" href="{% url 'change_book_success' book_id=book.pk %}">Set Success</a>
+                    <a class="btn btn-danger" href="{% url 'change_book_cancel' book_id=book.pk %}">Set Cancel</a>
+                {% endif %}
+                </div>
+            {% empty %}
+                <li>No videos uploaded yet.</li>
+            {% endfor %}
+        </div>
+    </div>
+     
+
+    <!-- JS CODE -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

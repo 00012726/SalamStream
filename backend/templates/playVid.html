@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+    <!-- navigation bar -->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="{% static 'icons/menu.png' %}" class="menuIcon"  style="display: none;">
+            <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+        </div>
+
+        <div class="nav-mid flex-div" style="display: none;">
+            <div class="searchBox flex-div">
+                <input type="text" placeholder="Let's seacrh!">
+                <img src="{% static 'icons/search.png' %}">
+            </div>
+        </div>
+
+        <div class="nav-right flex-div">
+            <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
+        </div>
+    </nav>
+
+    <!-- -----popup--------- -->
+    <div id="notificationPopup" class="notification-popup">
+        <div class="arrow"></div>
+        <div class="content">
+            <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+        </div>
+    </div>
+
+
+<!-- ---main--- -->
+    <div class="container playContainer">
+
+        <div class="row">
+
+            <div class="playVideo">
+
+                <video controls>
+                    <source src="{{ video.video_file.url }}" type="video/mp4">
+                </video>
+                <!-- name of the video -->
+
+                <h3>
+                    {{ video.title }}
+                </h3>
+
+                <div class="infoChosenVideo">
+                    <p>{{ video.views }} views &bull; {{ video.created_at|timesince }} ago</p>
+                    
+                    <div>
+                        <!-- <form method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="action" value="like">
+                            <button type="submit" style="border: none;
+                            background-color: transparent;
+                            padding: 0;
+                            margin: 0;
+                            font: inherit;
+                            cursor: pointer;
+                            outline: inherit;"><img style="width: 20px;" src="{% static 'icons/like.png' %}">Like</button>
+                        </form> -->
+                        <!-- <a href=""> <img src="{% static 'icons/share.png' %}">Share</a> -->
+                    </div>
+                </div>
+                <hr class="hrPlayVid">
+
+                <div class="publisher">
+                    <img src="{% static 'images/Jack.png' %}">
+                    <div>
+                        <p>
+                            {{ video.user.username }}
+                        </p>
+                       
+                    </div>
+                   
+                </div>
+
+                <div class="vidDescription">
+                    <p>{{ video.description }}</p>
+              
+          
+                    
+                </div>
+                <hr>
+                <!-- ----comments section---- -->
+            
+              
+            </div>
+
+            <!-- ----right sidebar---- -->
+            <div class="rightSidebar">
+               {% for r_video in related_videos %} 
+                <div class="sideVidList">
+                    <a href="{% url 'video_detail' r_video.pk %}" class="smallThumb"><img src="{{ r_video.thumbnail_photo.url }}" style="width: 200px;height: 150px;"></a>
+                    <div class="playVidInfo">
+                        <a href="{% url 'video_detail' r_video.pk %}"><p style="color: #fff; font-weight: 700;">{{ r_video.title }}</p></a>
+                        <p>{{ r_video.user.username }}</p>
+                        <p>{{ r_video.views }} views</p>
+                    </div>
+                </div>
+               {% endfor %} 
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- JS CODE -->
+<script src="{% static 'app.js' %}"></script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}"> 
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+<style>
+    .search-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 0 5px 5px 0;
+}
+</style>
+    <!-- navigation bar -->
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="{% static 'icons/menu.png' %}" class="menuIcon">
+            <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+        </div>
+
+        <div class="nav-mid flex-div">
+            <div class="searchBox flex-div">
+                <form method="get" action="{% url 'home' %}" class="search-form">
+                    <input type="text" name="q" placeholder="Let's search!">
+                    <button type="submit" class="search-button">
+                        <img src="{% static 'icons/search.png' %}" alt="Search">
+                    </button>
+                </form>        
+            </div>
+        </div>
+
+        <div class="nav-right flex-div">
+            {{ user.username }}    <img id="callPopup" style="margin-left: 10%;" src="{% static 'images/Jack.png' %}" class="userIcon">
+        </div>
+    </nav>
+
+    <!-- -----popup--------- -->
+    <div id="notificationPopup" class="notification-popup">
+        <div class="arrow"></div>
+        <div class="content">
+            {% if user.user_type == 'Moderator' %}
+                <a href="{% url 'admins' %}"><p class="popupNote">Admin Page </p></a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+                {% else %}  
+                    <a href="{% url 'login' %}"><p class="popupNote">Login</p></a> 
+                {% endif %}    
+            {% else %}    
+            {% if user.is_authenticated %}
+                <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+            {% else %}  
+                <a href="{% url 'login' %}"><p class="popupNote">Login</p></a> 
+            {% endif %}  
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- sidebar -->
+    <div class="sidebar" style="z-index: 10;">
+        <div class="shortcutLinks">
+            <a href="{% url 'home' %}"> <img src="{% static 'icons/clapperboardG.png' %}"> 
+            <p style="color: #4DAF00;">Videolar</p> </a>
+            <a href="{% url 'book' %}"> <img src="{% static 'icons/open-book.png' %}"> <p>Kitoblar</p> </a>
+            <a href="{% url 'audio' %}"> <img src="{% static 'icons/sound-bars.png' %}"> <p>Audiolar</p> </a>
+            <hr>
+        </div>
+       
+    </div>
+    <div class="contentType" style="z-index: 0;">
+        <hr>
+        <a href="{% url 'audio' %}" data-content-id="audioCC"><p>Audiolar</p></a>
+        <hr>
+        <a href="{% url 'book' %}" data-content-id="bookCC"><p>Kitoblar</p></a>
+        <hr>
+        <a href="#" data-content-id="videoCC"><p style="color: #4DAF00;">Videolar</p></a>
+        <hr>
+    </div>
+
+    <!-- main content ==> feed -->
+    <div class="container" style="z-index: 10;">
+
+        <div class="listContainer" style="z-index: 100;">
+         {% if videos %}   
+          {% for video in videos %}  
+          {% if video.video_status == 'PROGRESS' %}
+               
+          {% elif video.video_status == 'CANCEL' %}
+
+          {% else %}
+            <div class="vidList">
+                <a href="{% url 'video_detail' video.pk %}">
+                    
+                    {% if video.thumbnail_photo %}
+                    <img src="{{ video.thumbnail_photo.url }}" style="width: 250px;height: 250px; object-fit: cover;" class="thumbnail">
+                    {% else %}
+                        <p>No thumbnail</p>
+                    {% endif %}
+                </a>
+                
+                <div class="flex-div">
+
+                    <a href="author.html"><img src="{% static 'images/Jack.png' %}"></a>
+                    <div class="vidInfo">
+                        <a href="">
+                            <p>{{ video.title }}</p>
+                        </a>
+                        <p>{{ video.user.username }}</p>
+                        <p>{{ video.views }} Views &bull; {{ video.created_at|timesince }} ago</p>
+                    </div>
+                </div>
+            </div>
+           {% endif %}
+           {% endfor %}
+           {% else %}
+           <p> Not Found!</p>
+            
+           {% endif %} 
+        </div>
+
+    </div>
+
+
+    <!-- JS CODE -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

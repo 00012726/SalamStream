@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam stream</title>
+    <link rel="stylesheet" href="{% static 'loginForm.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+<!-- navigation bar -->
+<nav class="flex-div">
+    <div class="nav-left flex-div">
+        <img src="{% static 'icons/menu.png' %}" class="menuIcon" style="display: none;">
+        <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+    </div>
+
+    <div class="nav-mid flex-div" style="display: none;">
+        <div class="searchBox flex-div">
+            <input type="text" placeholder="Let's seacrh!">
+            <img src="{% static 'icons/search.png' %}">
+        </div>
+    </div>
+
+    <div class="nav-right flex-div">
+        <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
+    </div>
+</nav>
+
+<!-- -----popup--------- -->
+<div id="notificationPopup" class="notification-popup">
+    <div class="arrow"></div>
+    <div class="content">
+        <a href="welcome.html"><p class="popupNote">Akkauntdan chiqish</p></a>
+    </div>
+</div>
+
+    <div class="profileShowOff">
+        <div class="psf banner">
+            <p>*BACKGROUND BANNER*</p>
+        </div>
+        <div class="psf pi">
+            <img src="{% static 'images/Jack.png' %}" alt="">
+        </div>
+        <div class="psf name">
+            <h2>Jack Mason</H2>
+        </div>
+    </div>
+
+    <div class="lineP">
+        <hr>
+    </div>
+    <div class="contentType" style="display: flex;">
+        <hr>
+        <a href="#" data-content-id="audioCC"><p style="color: #4DAF00;">Audiolar</p></a>
+        <hr>
+        <a href="{% url 'book' %}" data-content-id="bookCC"><p>Kitoblar</p></a>
+        <hr>
+        <a href="{% url 'video' %}" data-content-id="videoCC"><p>Videolar</p></a>
+        <hr>
+    </div>
+    <div class="lineP" style="margin-top: 0px;">
+        <hr>
+    </div>
+
+    <div class="mainContent">
+        <section class="audioSec">
+            <div class="audioCC" id="audioCC">
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="{% static 'images/Roman_Empire.jpg' %}" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="{% static 'images/Roman_Empire.jpg' %}" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="{% static 'images/Roman_Empire.jpg' %}" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="{% static 'images/Roman_Empire.jpg' %}" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="{% static 'images/Roman_Empire.jpg' %}" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="{% static 'icons/PlayButton.png' %}"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="listContainer">
+                    <div class="vidList">
+                        <a href="playAudio.html"> <img src="/frontend/images/Roman_Empire.jpg" class="thumbnail"> </a>
+                        <div class="flex-div">
+                            <a href="playAudio.html"><img class="playAudiobtn" src="/frontend/icons/PlayButton.png"></a>
+                            <div class="vidInfo">
+                                <a href="">
+                                    <p>Claim all Roman empire's prov..</p>
+                                </a>
+                                <p>Jack Mason</p>
+                                <p>2.5k Listens &bull; 2 days ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- ----------js code0-------------- -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

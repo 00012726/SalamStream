@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salam Stream</title>
+    <link rel="stylesheet" href="{% static 'loginForm.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+    <div class="logo">
+        <a href="#"><img style="z-index: 100;" src="{% static 'icons/logoTransparent.svg' %}"></a>
+    </div>
+    <div class="loginBox">
+        <h3>Register</h3>
+        <form method="post" style="background-color: #2b2b2b;">
+            {% csrf_token %}
+            {% if form.errors %}
+                <p>Error:</p>
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <div class="txtBox">
+                <input type="text" placeholder="username" name="username">
+            </div>
+            <div class="txtBox">
+                <input type="email" placeholder="email" name="email" id="id_email">
+            </div>
+            <div class="txtBox">
+                <input type="password" placeholder="password" name="password1" id="id_password1">
+            </div>
+            <div class="txtBox">
+                <input type="password" placeholder="confirm pass" name="password2" id="id_password2">
+            </div>
+                <button class="btnSubmit" type="submit">Register</button>
+            <a href="{% url 'login' %}" class="shaking-element" style="  margin-bottom: 0;
+                        color: rgb(167, 71, 71);
+                        font-size: 12px;
+                        text-decoration: underline;
+                        background-color: #2b2b2b;
+                        margin-top: 10px;">Login</a>
+        </form>
+    </div>
+    <!-- JS CODE -->
+    <script src="{% static 'app.js' %}"></script>
+</body>
+</html>

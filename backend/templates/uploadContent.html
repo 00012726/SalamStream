@@ -1,0 +1,215 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SalamStudio</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" type="x-icon" href="{% static 'icons/logoIcon.png' %}">
+</head>
+<body>
+        <!-- navigation bar -->
+        <nav class="flex-div">
+            <div class="nav-left flex-div">
+                <img src="{% static 'icons/menu.png' %}" class="menuIcon" style="display: none;">
+                <a href="{% url 'home' %}"><img src="{% static 'icons/logoTransparent.svg' %}" class="logoIconT"></a>
+            </div>
+    
+            <div class="notForUserPage">
+                <a href="{% url 'home' %}">
+                    <h3 style="
+                        display: inline-block;">Salam</h3> 
+                    <h3 style="
+                        display: inline-block; 
+                        color: #4DAF00;
+                        position: relative; 
+                        padding: 0;
+                        margin: 0;">Studio</h3>
+                </a>
+            </div>
+    
+            <div class="nav-right flex-div">
+                <img id="callPopup" src="{% static 'images/Jack.png' %}" class="userIcon">
+            </div>
+        </nav>
+    
+        <!-- -----popup--------- -->
+        <div id="notificationPopup" class="notification-popup">
+            <div class="arrow"></div>
+            <div class="content">
+                <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+            </div>
+        </div>
+
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <div class="shortcutLinks">
+            <img href="#" src="{% static 'images/Jack.png' %}" class="admRoomImg flex-div">
+            <a href="/upload/"><p class="bigGreen">Sizning Kanalingiz</p> </a>
+            <hr>
+        </div>
+        <br>
+        <br>
+        <a href="/upload/b-create" class="btn btn-primary" style="margin-top: 30%;">Kitob yuklash</a>
+        <br>
+        <br>
+        <br>
+        <a href="/upload/create" class="btn btn-primary" style="margin-top: 30%;">Video yuklash</a>
+        <br>
+        <br>
+        <br>
+        <a href="/upload/a-create" class="btn btn-primary" style="margin-top: 30%;">Audio yuklash</a>
+    </div>
+
+
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <div class="boxContainer">
+        <h3>Ushbu sahifada siz kontentlarizni kora olasiz</h3> 
+    </div>  
+</div>
+ 
+
+
+<div class="container">
+    <h3>Your videos</h3>
+    <br>
+    <div class="row">
+        {% for video in user_videos|slice:4 %}
+            <div class="col-md-3">
+                <a href="{% url 'video_detail' video.pk %}"> 
+                    <h3>{{ video.title }}</h3>
+                    <video controls style="width: 250px;">
+                        <source src="{{ video.video_file.url }}" type="video/mp4">
+                    </video>
+                </a>
+            {% if video.video_status == 'PROGRESS' %}
+                <p><b>Status</b>: Progress</p>
+            {% endif %}    
+            </div>
+        {% empty %}
+            <li>No videos uploaded yet.</li>
+        {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="/upload/create" style="margin-top: 18px; position: absolute;">See more</a>
+</div>
+
+<div class="container">
+    <h3>Your audios</h3>
+    <br>
+    <div class="row">
+        {% for audio in user_audios|slice:4 %}
+            <div class="col-md-3">
+                <a href="#"> 
+                    <audio controls style="width: 250px;">
+                        <source src="{{ audio.audio_file.url }}" type="audio/mpeg">
+                    </audio>
+                </a>
+            {% if audio.audio_status == 'PROGRESS' %}
+                <p><b>Status</b>: Progress</p>
+            {% endif %}    
+            </div>
+        {% empty %}
+            <li>No videos uploaded yet.</li>
+        {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="/upload/a-create" style="margin-top: 18px; position: absolute;">See more</a>
+</div>
+<div class="container">
+    <h3>Your books</h3>
+    <br>
+    <div class="row">
+        {% for book in user_books|slice:4 %}
+            <div class="col-md-3">
+                <a href="{{ book.book_file.url }}"> 
+                    <img src="{{ book.thumbnail_photo.url }}" style="width: 300px;" alt="">
+                </a>
+            {% if book.book_status == 'PROGRESS' %}
+                <p><b>Status</b>: Progress</p>
+            {% endif %}    
+            </div>
+        {% empty %}
+            <li>No videos uploaded yet.</li>
+        {% endfor %}
+    </div>
+    <a class="btn btn-primary" href="/upload/b-create" style="margin-top: 18px; position: absolute;">See more</a>
+</div>
+<div class="container" style="display: flex; align-items: center; justify-content: center;">
+    <div class="boxContainer">
+        <h3>Ilm tarqatish yo'lida hissangiz uchun rahmat!</h3> 
+    </div>  
+</div>
+
+
+<style>
+    .container {
+        margin-top: 50px;
+    }
+    
+    .btn-primary {
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        font-weight: bold;
+    }
+    
+    input[type="file"] {
+        display: block;
+        margin-top: 5px;
+    }
+    
+    button[type="submit"] {
+        margin-top: 20px;
+    }
+    .btn.btn-primary {
+    background-color: #4DAF00;
+    border-color: #4DAF00;
+    color: #fff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.btn.btn-primary:hover {
+    background-color: #52a414;
+    border-color: #52a414;
+    color: #fff;
+}
+
+.btn.btn-primary:focus, .btn.btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(12, 180, 70, 0.5);
+}
+
+.btn.btn-primary.disabled, .btn.btn-primary:disabled {
+    background-color: #52a414;;
+    border-color: #52a414;;
+    color: #fff;
+    pointer-events: none;
+    opacity: 0.65;
+}
+</style>
+
+
+<!-- JS link -->
+<script src="{% static 'app.js' %}"></script>
+<script>
+    function showUploadForm() {
+    var uploadForm = document.getElementById('uploadForm');
+    if (uploadForm.style.display === 'none' || uploadForm.style.display === '') {
+        uploadForm.style.display = 'block';
+    } else {
+        uploadForm.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
