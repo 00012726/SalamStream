@@ -1,9 +1,9 @@
-from django.db import models # type: ignore
-from django.contrib.auth import get_user_model # type: ignore
+from django.db import models 
+from django.contrib.auth import get_user_model 
 
 User = get_user_model()
 
-class VideoModel(models.Model):
+class VideoModel(models.Model): #model for videos
     PROGRESS = 'PROGRESS'
     CANCEL = 'CANCEL'
     SUCCESS = 'SUCCESS'
@@ -18,8 +18,6 @@ class VideoModel(models.Model):
     thumbnail_photo = models.FileField(upload_to='video_photos/', null=True, blank=True)
     video_file = models.FileField(upload_to='videos/')
     description = models.TextField()
-    # likes = models.ManyToManyField(User, related_name='video_likes', blank=True)
-    # dislikes = models.ManyToManyField(User, related_name='video_dislikes', blank=True)
     views = models.PositiveIntegerField(default=0)
     video_status = models.CharField(max_length=70, choices=VIDEO_STATUS, default=PROGRESS)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -31,7 +29,7 @@ class VideoModel(models.Model):
         verbose_name = 'Video'
         verbose_name_plural = 'Videos'
 
-class AudioModel(models.Model):
+class AudioModel(models.Model): #model for audio
     PROGRESS = 'PROGRESS'
     CANCEL = 'CANCEL'
     SUCCESS = 'SUCCESS'
@@ -54,8 +52,8 @@ class AudioModel(models.Model):
     class Meta:
         verbose_name = 'Audio'
         verbose_name_plural = 'Audios'
-
-class BookModel(models.Model):
+ 
+class BookModel(models.Model): #model for book
     PROGRESS = 'PROGRESS'
     CANCEL = 'CANCEL'
     SUCCESS = 'SUCCESS'

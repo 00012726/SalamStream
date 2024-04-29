@@ -1,13 +1,12 @@
-from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
-from django.contrib.auth.decorators import login_required # type: ignore
-from django.views.generic import TemplateView, CreateView # type: ignore
-from django.urls import reverse_lazy # type: ignore
-
+from django.shortcuts import render, redirect, get_object_or_404 
+from django.contrib.auth.decorators import login_required
+from django.views.generic import TemplateView, CreateView 
+from django.urls import reverse_lazy 
 
 
 from .models import VideoModel, AudioModel, BookModel
 
-
+#class based view templates
 class HomeTemplate(TemplateView):
     template_name = 'welcome.html'
 
@@ -43,14 +42,14 @@ class ModeratorTemplate(TemplateView):
 class PlayAudioTemplate(TemplateView):
     template_name = 'playAudio.html'
 
-def index_video_list(request):
+def index_video_list(request): # search for videos
     query = request.GET.get('q')
     videos = VideoModel.objects.all()
     if query:
         videos = videos.filter(title__icontains=query)
     return render(request, 'index.html', {'videos': videos})
 
-def video_detail(request, pk):
+def video_detail(request, pk): #video details
     video = VideoModel.objects.get(pk=pk)
     video.views += 1
     video.save()
@@ -58,28 +57,28 @@ def video_detail(request, pk):
     return render(request, 'playVid.html', {'video': video, 'related_videos': related_videos})
 
 
-def audio_list(request):
+def audio_list(request): #search for audio
     query = request.GET.get('q')
     audios = AudioModel.objects.all()
     if query:
         audios = audios.filter(title__icontains=query)
     return render(request, 'audio.html', {'audios': audios})
 
-def audio_detail(request, pk):
+def audio_detail(request, pk): #details for audios
     audio = AudioModel.objects.get(pk=pk)
     related_audios = AudioModel.objects.all()
     return render(request, 'playAudio.html', {'audio': audio, 'related_audios': related_audios})
 
 
 
-def book_list(request):
+def book_list(request): #searching for books
     query = request.GET.get('q')
     books = BookModel.objects.all()
     if query:
         books = books.filter(title__icontains=query)
     return render(request, 'book.html', {'books': books})
 
-class AdminsTemplateView(TemplateView):
+class AdminsTemplateView(TemplateView): #shows all content to moderators 
     template_name = 'adminPage.html'
 
     def get_context_data(self, **kwargs):
@@ -89,7 +88,7 @@ class AdminsTemplateView(TemplateView):
         context['user_books'] = BookModel.objects.all()
         return context
 
-class UploadTemplateView(TemplateView):
+class UploadTemplateView(TemplateView): #shows  user's all uploaded content in main uploading page
     template_name = 'uploadContent.html'
 
     def get_context_data(self, **kwargs):
@@ -99,18 +98,18 @@ class UploadTemplateView(TemplateView):
         context['user_books'] = BookModel.objects.filter(user=self.request.user)
         return context
 
-class VideoCreateView(CreateView):
+class VideoCreateView(CreateView): #user's content showing and uploading video in video upload page
     model = VideoModel
     fields = []
     template_name = 'uploadVideo.html'
     success_url = reverse_lazy('upload')
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): #showing user's uploaded videos
         context = super().get_context_data(**kwargs)
         context['user_videos'] = VideoModel.objects.filter(user=self.request.user)
         return context
 
-    def form_valid(self, form):
+    def form_valid(self, form): # uploading videofile for user
         form.instance.user = self.request.user
         thumbnail_photo = self.request.FILES.get('thumbnail_photo')
         video_file = self.request.FILES.get('video_file')
@@ -125,18 +124,18 @@ class VideoCreateView(CreateView):
         form.save()
         return super().form_valid(form)
 
-class AudioCreateView(CreateView):
+class AudioCreateView(CreateView): 
     model = AudioModel
     fields = []
     template_name = 'uploadAudio.html'
     success_url = reverse_lazy('upload')
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # shows all audios uploaded by user in audio upload page
         context = super().get_context_data(**kwargs)
         context['user_audios'] = AudioModel.objects.filter(user=self.request.user)
         return context
 
-    def form_valid(self, form):
+    def form_valid(self, form): # audio upload forma and validation
         form.instance.user = self.request.user
         form.instance.audio_status = AudioModel.PROGRESS
         thumbnail_photo = self.request.FILES.get('thumbnail_photo')
@@ -152,19 +151,19 @@ class AudioCreateView(CreateView):
         form.save()
         return super().form_valid(form)
     
-class BookCreateView(CreateView):
+class BookCreateView(CreateView): # shows all books uploaded by user itself in book upload page
     model = BookModel
     fields = []
     template_name = 'uploadBook.html'
     success_url = reverse_lazy('upload')
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs): # shows all books uploaded by user itself in book upload page
         context = super().get_context_data(**kwargs)
         context['user_books'] = BookModel.objects.filter(user=self.request.user)
         return context
 
 
-    def form_valid(self, form):
+    def form_valid(self, form):  # form to upload books
         form.instance.user = self.request.user
         form.instance.book_status = BookModel.PROGRESS
         thumbnail_photo = self.request.FILES.get('thumbnail_photo')
@@ -181,7 +180,7 @@ class BookCreateView(CreateView):
         return super().form_valid(form)
 
 
-@login_required
+@login_required # this is for moderators, they can change the status for videos
 def change_video_status(request, video_id, new_status):
     if request.user.user_type == 'Moderator':
         video = get_object_or_404(VideoModel, pk=video_id)
@@ -190,7 +189,7 @@ def change_video_status(request, video_id, new_status):
     return redirect('admins')
 
 
-@login_required
+@login_required #change status for audio
 def change_audio_status(request, audio_id, new_status):
     if request.user.user_type == 'Moderator':
         audio = get_object_or_404(AudioModel, pk=audio_id)
@@ -199,7 +198,7 @@ def change_audio_status(request, audio_id, new_status):
     return redirect('admins')
 
 
-@login_required
+@login_required #change status for books
 def change_book_status(request, book_id, new_status):
     if request.user.user_type == 'Moderator':
         book = get_object_or_404(BookModel, pk=book_id)

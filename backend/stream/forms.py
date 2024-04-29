@@ -1,7 +1,7 @@
-from django import forms # type: ignore
+from django import forms 
 from .models import VideoModel, AudioModel, BookModel
 
-
+#form data structure
 class VideoForm(forms.ModelForm):
     class Meta:
         model = VideoModel
