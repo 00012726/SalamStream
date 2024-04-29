@@ -57,6 +57,10 @@
                         <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
                     {% elif user.user_type == 'User' %}
                         <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
+                    {% elif user.user_type == 'U' %}
+                        <a href="{% url 'admins' %}"><p class="popupNote">Admin Page</p></a>
+                        <a href="{% url 'upload' %}"><p class="popupNote">Salam Studio</p></a>
+                        <a href="{% url 'logout' %}"><p class="popupNote">Akkauntdan chiqish</p></a>
                     {% endif %}
                 {% else %}
                     <a href="{% url 'login' %}"><p class="popupNote">Akkauntga kirish</p></a>

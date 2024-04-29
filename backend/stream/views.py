@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.views.generic import TemplateView, CreateView
-from django.urls import reverse_lazy
+from django.shortcuts import render, redirect, get_object_or_404 # type: ignore
+from django.contrib.auth.decorators import login_required # type: ignore
+from django.views.generic import TemplateView, CreateView # type: ignore
+from django.urls import reverse_lazy # type: ignore
 
 
 

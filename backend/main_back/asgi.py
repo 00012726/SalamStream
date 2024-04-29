@@ -1,6 +1,6 @@
 import os
 
-from django.core.asgi import get_asgi_application
+from django.core.asgi import get_asgi_application # type: ignore # type: ignore
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main_back.settings')
 
