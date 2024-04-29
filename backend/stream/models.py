@@ -1,5 +1,4 @@
 from django.db import models
-<<<<<<< HEAD
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -79,7 +78,3 @@ class BookModel(models.Model):
     class Meta:
         verbose_name = 'Book'
         verbose_name_plural = 'Books'
-=======
-
-# Create your models here.
->>>>>>> 548ae16a45538045c502f85747dd4ad1fc58530f
