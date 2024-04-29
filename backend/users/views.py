@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.shortcuts import render, redirect # type: ignore
+from django.contrib.auth import login, authenticate # type: ignore
 from .forms import CustomUserCreationForm, LoginForm
-from django.contrib.auth import logout
+from django.contrib.auth import logout # type: ignore
 
 def register(request):
     if request.method == 'POST':

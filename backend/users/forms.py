@@ -1,5 +1,5 @@
-from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django import forms # type: ignore
+from django.contrib.auth.forms import UserCreationForm # type: ignore
 from .models import CustomUser
 
 class CustomUserCreationForm(UserCreationForm):
