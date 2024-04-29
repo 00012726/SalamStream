@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView, CreateView
@@ -206,3 +207,11 @@ def change_book_status(request, book_id, new_status):
         book.book_status = new_status
         book.save()
     return redirect('admins')
+=======
+from django.shortcuts import render
+from django.views.generic import TemplateView
+
+
+class HomeTemplate(TemplateView):
+    template_name = 'index.html'
+>>>>>>> 548ae16a45538045c502f85747dd4ad1fc58530f
