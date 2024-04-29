@@ -34,13 +34,13 @@ class BookTemplate(TemplateView):
 class LoginTemplate(TemplateView):
     template_name = 'login.html'
 
-
 class ModeratorTemplate(TemplateView):
     template_name = 'moderationPage.html'
 
-
 class PlayAudioTemplate(TemplateView):
     template_name = 'playAudio.html'
+
+
 
 def index_video_list(request): # search for videos
     query = request.GET.get('q')

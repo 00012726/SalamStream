@@ -12,9 +12,9 @@ class VideoModel(models.Model): #model for videos
         (CANCEL, 'Отменен'),
         (SUCCESS, 'Успешно'),
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) #user identification when uploaded
     title = models.CharField(max_length=110)
-    tags = models.CharField(max_length=90)
+    # tags = models.CharField(max_length=90)
     thumbnail_photo = models.FileField(upload_to='video_photos/', null=True, blank=True)
     video_file = models.FileField(upload_to='videos/')
     description = models.TextField()
